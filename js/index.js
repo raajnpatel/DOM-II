@@ -9,7 +9,7 @@ topBackground.style.borderBottomLeftRadius = '10px';
 topBackground.style.borderBottomRightRadius = '10px';
 
 
-// 1. Mouse Over
+// Mouse Over
 const theHeader = document.querySelector('header');
 theHeader.addEventListener('mouseenter',(event)=>{
     theHeader.style.backgroundImage = 'linear-gradient(lightblue, dodgerblue)';
@@ -23,7 +23,7 @@ theHeader.addEventListener('mouseleave',(event)=>{
 });
 
 
-// 2. On Click
+//  On Click
 let funClick = document.querySelector('header div h1');
 let step = true;
 funClick.addEventListener('click', (event) => {
@@ -33,7 +33,7 @@ funClick.addEventListener('click', (event) => {
 });
 
 
-// 3.  Blur / Focus
+// Blur / Focus
 let blurFocus = document.querySelector('div header img');
 blurFocus.style.filter = 'blur(6px)';
 blurFocus.addEventListener('mouseover', (event) => {
@@ -43,24 +43,23 @@ blurFocus.addEventListener('mouseout', (event) => {
     blurFocus.style.filter = 'blur(6px)';
 });
 
-// 4. A tag stuff
+// A tag stuff
 let nav = document.querySelector('nav');
+nav.style.width = '60%';
+nav.style.alignItems = 'center';
 let navA = document.querySelectorAll('a');
 navA.forEach(function(item, index, event) {
-    // event.preventDefault();
-    // item.innerText = siteContent['nav'][`nav-item-${index+1}`];
+
     item.style.color = 'darkslategrey';
 });
 
 
-
-
-// 5. Button to Top
+//  Button to Top
 let topAnchor = document.createElement('a');
 topAnchor.textContent = 'Back to Top';
 topAnchor.style.fontSize = '1rem';
 topAnchor.style.position = 'relative';
-topAnchor.style.left = '80px';
+topAnchor.style.left = '40px';
 topAnchor.href = '#top';
 nav.appendChild(topAnchor);
 topAnchor.style.visibility = 'hidden';
@@ -75,8 +74,8 @@ window.addEventListener('scroll', (event) => {
     });
 
 
-// 6. Double Click
-let baseText = document.querySelector('p');
+//  Double Click
+const baseText = document.querySelector('p');
 baseText.addEventListener("dblclick", (event) => {
     if (confirm("WARNING: YOU WILL REGRET CONTINUING!")) {
         baseText.style.fontSize = '4rem';
@@ -84,45 +83,50 @@ baseText.addEventListener("dblclick", (event) => {
         baseText.style.fontSize = '0.5rem';
     }
 });
+// let baseText = document.querySelectorAll('p');
+// baseText.forEach((pText) => {
+//     pText.addEventListener('dblclick', (event) => {
+//         baseText.style.fontSize = '3rem';
+//     });
+// });
 
-// 7.  On Load
-// window.addEventListener('load', (event) => {
-//     let person = prompt("Please enter your name:", "");
-//     if (person == null || person === "" || person === "Harry Potter") {
-//         alert("You're the worst.....")
-//     }
-//     else {
-//           alert(`Thank you, ${person}. I hope you find all of the easter eggs!`);
-// }});
+//   On Load
+window.addEventListener('load', (event) => {
+    let person = prompt("Please enter your name:", "");
+    if (person == null || person === "" || person === "Harry Potter") {
+        alert("You're the worst.....")
+    }
+    else {
+          alert(`Thank you, ${person}. I hope you find all of the easter eggs!`);
+}});
 
-// 8.
+//
 
-let midText = document.querySelectorAll("img")[1, 2];
+let midText = document.querySelectorAll("img");
 midText.addEventListener('mousewheel', (event) => {
     midText.style.display = 'none';
 });
 
 
-// 9.
-let dragLink = document.querySelector('.nav a');
-
-// dragLink.addEventListener("dragstart", function(event) {
+//
+// let dragLink = document.querySelector('.nav a');
+//
+// dragLink.addEventListener("dragstart", (event) => {
 //     event.dataTransfer.setData("Text", event.target.id);
 //     alert('test');
 // });
 //
 // /* Events fired on the drop target */
-// dragLink.addEventListener("dragover", function(event) {
+// dragLink.addEventListener("dragover", (event) => {
 //     event.preventDefault();
 // });
 //
-// dragLink.addEventListener("drop", function(this, event) {
+// dragLink.addEventListener("drop", (event) => {
 //     event.preventDefault();
 //     let data = event.dataTransfer.getData("Text");
-//     event.target.appendChild(document.getElementById(data));
-//     document.getElementById("demo").innerHTML = "The p element was dropped";
+//
 // });
-
+//
 // let dragSpot = document.createElement('test');
 // dragSpot.id = 'dragTarget';
 // dragSpot.style.padding = '20px 40px';
@@ -131,9 +135,8 @@ let dragLink = document.querySelector('.nav a');
 // dragSpot.style.display = 'flex';
 // // dragSpot.style.boxSizing = 'border-box';
 // dragSpot.style.border = '1px solid black';
-// dragSpot.style.position = 'relative';
-// nav.appendChild(dragSpot);
-// 10.
+// nav.prepend(dragSpot);
+//
 
 
 
